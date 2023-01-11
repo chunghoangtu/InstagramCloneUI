@@ -39,7 +39,7 @@
             padding-left: 10px;
             font-size: 2em;
           }
-          &.more-setting.active {
+          &.more-setting {
             align-self: flex-end;
             display: grid;
             align-items: center;
@@ -62,45 +62,48 @@
                   border-radius: 20px;
                 }
               }
-              
-                
             }
-
             .popup-actions {
+              display: none;
               bottom: 40px;
               transition: .5s all;
               min-width: 210px;
-              a.subMenu-item {
-                display: grid;
-                grid-template-columns: 1fr 30px;
-              }
+              
             }
-            #toggle:checked ~ .popup-actions {
-              display: grid;
-              height: auto;
-              width: 13vw;
-              position: absolute;
-              border: 1px solid #1e1e1e;
-              background-color: #1e1e1e;
-              border-radius: 5px;
-              padding: 16px;
-              bottom: 0px;
-              left: 2%;
-              min-width: 210px;
-  
-              .actions {
+            &.active {
+              #toggle:checked ~ .popup-actions {
                 display: grid;
-                grid-auto-rows: 30px;
+                height: auto;
+                width: 13vw;
+                position: absolute;
+                border: 1px solid #1e1e1e;
+                background-color: #1e1e1e;
+                border-radius: 5px;
+                padding: 16px;
+                bottom: 0px;
+                left: 2%;
+                min-width: 210px;
+    
+                .actions {
+                  display: grid;
+                  grid-auto-rows: 30px;
+                }
+                li {
+                  width: 100%;
+                  list-style:none;
+                }
+                a.subMenu-item {
+                  display: grid;
+                  grid-template-columns: 1fr 30px;
+                }
+    
+    
+                // visibility: visible;
+                // opacity: 1;
               }
-              li {
-                width: 100%;
-                list-style:none;
-              }
-  
-  
-              visibility: visible;
-              opacity: 1;
+
             }
+            
           }
         }
       }
