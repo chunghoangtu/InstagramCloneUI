@@ -1,0 +1,108 @@
+.icu-side-nav {
+    border-right: 1px solid rgb(41, 38, 38);
+    .nav__container {
+      display: grid;
+      font-size: 1.5rem;
+      grid-template-rows: 15em auto;
+      padding: 16px 20px 16px;
+      .nav__brand {
+        &.logo {
+          height: 100px;
+          margin-top: 16px;
+          background-image: url('../../assets/text.txt');
+          background-size: cover;
+        }
+      }
+      .nav__items {
+        display: grid;
+        height: auto; 
+        grid-template-rows: repeat(7, 60px)  auto;
+        .nav__link {
+          display: grid;
+          width: 100%;
+          height: 40px;
+          align-items: center;
+          a {
+            width: 100%;
+            height: 40px;
+            display: grid;
+            align-items: center;
+            grid-template-columns: 45px 1fr;
+            text-decoration: none;
+            color: white;
+          }
+          &:hover, &:checked, &.active{
+            background-color: rgb(102, 97, 91);
+            border-radius: 20px;
+          }
+          i {
+            padding-left: 10px;
+            font-size: 2em;
+          }
+          &.more-setting.active {
+            align-self: flex-end;
+            display: grid;
+            align-items: center;
+            color: white;
+            .nav__link-custome {
+              display: grid;
+              width: 100%;
+            }
+            .input-action {
+              position: relative;
+              input {
+                display: none;
+              }
+              label {
+                display: grid;
+                align-items: center;
+                grid-template-columns: 45px 1fr;
+                &:checked {
+                  background-color: rgb(102, 97, 91);
+                  border-radius: 20px;
+                }
+              }
+              
+                
+            }
+
+            .popup-actions {
+              bottom: 40px;
+              transition: .5s all;
+              min-width: 210px;
+              a.subMenu-item {
+                display: grid;
+                grid-template-columns: 1fr 30px;
+              }
+            }
+            #toggle:checked ~ .popup-actions {
+              display: grid;
+              height: auto;
+              width: 13vw;
+              position: absolute;
+              border: 1px solid #1e1e1e;
+              background-color: #1e1e1e;
+              border-radius: 5px;
+              padding: 16px;
+              bottom: 0px;
+              left: 2%;
+              min-width: 210px;
+  
+              .actions {
+                display: grid;
+                grid-auto-rows: 30px;
+              }
+              li {
+                width: 100%;
+                list-style:none;
+              }
+  
+  
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+}

@@ -1,9 +1,10 @@
 import React from 'react'
+import { Navigation } from './components/Navigation'
 
 export const App = () => {
   return (
     <div className='icu-app'>
-      <nav className="icu-side-nav"></nav>
+      <Navigation />
       <main className="icu-main">
         <section className="icu-wall">
           <div className="icu-wall__stories"></div>
