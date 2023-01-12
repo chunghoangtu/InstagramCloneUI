@@ -55,15 +55,9 @@
                 grid-template-columns: 45px 1fr;
               }
             }
-            .popup-actions {
-              display: none;
-              bottom: 4rem;
-              transition: .5s all;
-              min-width: 21rem;
-              
-            }
-            #toggle:checked ~ .popup-actions {
+            .popup-actions {         
               display: grid;
+              min-width: 21rem;
               height: auto;
               width: 13vw;
               position: absolute;
@@ -71,10 +65,12 @@
               background-color: #1e1e1e;
               border-radius: 5px;
               padding: 10px;
-              bottom: 0px;
-              left: 2%;
-              min-width: 210px;
               bottom: 40px;
+              left: 2%;
+
+              transition: .5s all;
+              visibility: hidden;
+              opacity: 0;
   
               .actions {
                 display: grid;
@@ -87,9 +83,13 @@
               a.subMenu-item {
                 display: grid;
                 grid-template-columns: 1fr 35px;
-              }
+              }              
             }
-            
+
+            #toggle:checked ~ .popup-actions { 
+              visibility: visible;
+              opacity: 1;
+            }            
           }
         }
       }
