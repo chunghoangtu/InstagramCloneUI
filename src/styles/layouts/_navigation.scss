@@ -3,7 +3,7 @@
     .nav__container {
       display: grid;
       font-size: 1.5rem;
-      grid-template-rows: 15em auto;
+      grid-template-rows: 13em auto;
       padding: 16px 20px 16px;
       .nav__brand {
         &.logo {
@@ -16,27 +16,27 @@
       .nav__items {
         display: grid;
         height: auto; 
-        grid-template-rows: repeat(7, 60px)  auto;
+        grid-template-rows: repeat(7, 6rem)  auto;
         .nav__link {
           display: grid;
           width: 100%;
-          height: 40px;
+          height: 4rem;
           align-items: center;
           a {
             width: 100%;
-            height: 40px;
+            // height: 40px;
             display: grid;
             align-items: center;
-            grid-template-columns: 45px 1fr;
+            grid-template-columns: 4.5rem 1fr;
             text-decoration: none;
             color: white;
           }
           &:hover, &:checked, &.active{
             background-color: rgb(102, 97, 91);
-            border-radius: 20px;
+            border-radius: 2rem;
           }
           i {
-            padding-left: 10px;
+            padding-left: 1rem;
             font-size: 2em;
           }
           &.more-setting {
@@ -44,10 +44,6 @@
             display: grid;
             align-items: center;
             color: white;
-            .nav__link-custome {
-              display: grid;
-              width: 100%;
-            }
             .input-action {
               position: relative;
               input {
@@ -57,51 +53,41 @@
                 display: grid;
                 align-items: center;
                 grid-template-columns: 45px 1fr;
-                &:checked {
-                  background-color: rgb(102, 97, 91);
-                  border-radius: 20px;
-                }
               }
             }
             .popup-actions {
               display: none;
-              bottom: 40px;
+              bottom: 4rem;
               transition: .5s all;
-              min-width: 210px;
+              min-width: 21rem;
               
             }
-            &.active {
-              #toggle:checked ~ .popup-actions {
+            #toggle:checked ~ .popup-actions {
+              display: grid;
+              height: auto;
+              width: 13vw;
+              position: absolute;
+              border: 1px solid #1e1e1e;
+              background-color: #1e1e1e;
+              border-radius: 5px;
+              padding: 10px;
+              bottom: 0px;
+              left: 2%;
+              min-width: 210px;
+              bottom: 40px;
+  
+              .actions {
                 display: grid;
-                height: auto;
-                width: 13vw;
-                position: absolute;
-                border: 1px solid #1e1e1e;
-                background-color: #1e1e1e;
-                border-radius: 5px;
-                padding: 16px;
-                bottom: 0px;
-                left: 2%;
-                min-width: 210px;
-    
-                .actions {
-                  display: grid;
-                  grid-auto-rows: 30px;
-                }
-                li {
-                  width: 100%;
-                  list-style:none;
-                }
-                a.subMenu-item {
-                  display: grid;
-                  grid-template-columns: 1fr 30px;
-                }
-    
-    
-                // visibility: visible;
-                // opacity: 1;
+                grid-auto-rows: 35px;
               }
-
+              li {
+                width: 100%;
+                list-style:none;
+              }
+              a.subMenu-item {
+                display: grid;
+                grid-template-columns: 1fr 35px;
+              }
             }
             
           }

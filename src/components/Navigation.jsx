@@ -13,8 +13,7 @@ export const Navigation = () => {
     {name:'Messages', icon: 'far fa-bell', href: ''}, 
     {name:'Notifications', icon: 'far fa-bell', href: ''}, 
     {name:'Create', icon: 'far fa-bell', href: ''}, 
-    {name:'Profile', icon: 'far fa-bell', href: ''},
-    {name:'More', icon: 'far fa-bell', href: ''}
+    {name:'Profile', icon: 'far fa-bell', href: ''}
   ]
 
   const subMenuItems =[
@@ -42,26 +41,12 @@ export const Navigation = () => {
 
   const menus = menuItems.map((item, index) => {
     return (
-      <>
-        { index !== indexLastItem ? 
         <li key={index} className={`nav__link ${ activeIndex === index ? "active" : "" }`}>
           <a className="" href={item.href} onClick={(e) => {handleOnclick(index, e)}} >
             <i className={item.icon}></i>
             <p>{item.name}</p>
           </a>
         </li>
-        : 
-        <li key={index} className={`nav__link more-setting ${ activeIndex === index ? "active" : "" } `} onClick={ (e) => { handleOnclick(index, e) }}>
-          <div className="input-action">
-              <label for="toggle"><i className="far fa-bell"></i>{item.name}</label>
-              <input type="checkbox" id="toggle"/>
-              <div className="popup-actions">
-                <ul className="actions" >{subMenus}</ul>
-              </div>
-            </div>
-        </li>
-      }
-      </>
     )
   })
 
@@ -71,6 +56,15 @@ export const Navigation = () => {
         <a className="nav__brand logo"  href="/"></a>
         <ul className="nav__items">
           {menus}
+          <li className="nav__link more-setting">
+            <div className="input-action">
+              <label for="toggle"><i className="far fa-bell"></i>More</label>
+              <input type="checkbox" id="toggle"/>
+              <div className="popup-actions">
+                <ul className="actions">{subMenus}</ul>
+              </div>
+            </div>
+          </li> 
         </ul>
       </div>
     </nav>
